@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plans - Alganai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-white">
+    <div class="max-w-md mx-auto p-6">
+        <h1 class="text-[#112952] text-3xl font-bold mb-8">Subscriptions Plans</h1>
+        
+        <div class="space-y-4">
+            <!-- Starter Plan -->
+            <div class="border border-gray-200 rounded-2xl p-6 space-y-4 hover:border-[#112952] transition-colors cursor-pointer">
+                <h2 class="text-xl font-bold text-[#112952]">Starter Algani</h2>
+                <div class="flex items-end gap-1">
+                    <span class="text-3xl font-bold text-[#112952]">1500</span>
+                    <div class="text-gray-600">
+                        <span class="font-semibold">DZD</span>
+                        <span class="text-sm">/month</span>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-center gap-3 text-gray-600">
+                        <i class="far fa-envelope"></i>
+                        <span>Supported by email</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-600">
+                        <i class="far fa-clock"></i>
+                        <span>Every 7 days</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-600">
+                        <i class="far fa-file-alt"></i>
+                        <span>Up to 5/week</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="border-2 border-[#112952] rounded-2xl p-6 space-y-4 bg-white shadow-lg cursor-pointer">
+                <h2 class="text-xl font-bold text-[#112952]">Pro Algani</h2>
+                <div class="flex items-end gap-1">
+                    <span class="text-3xl font-bold text-[#112952]">2500</span>
+                    <div class="text-gray-600">
+                        <span class="font-semibold">DZD</span>
+                        <span class="text-sm">/month</span>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-center gap-3 text-gray-600">
+                        <i class="far fa-envelope"></i>
+                        <span>Supported by email</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-600">
+                        <i class="far fa-clock"></i>
+                        <span>Every 3 days</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-600">
+                        <i class="far fa-file-alt"></i>
+                        <span>Up to 15/week</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Validate Button -->
+        <button 
+            onclick="window.location.href='payment.html'"
+            class="w-full bg-[#112952] text-white py-4 rounded-xl text-lg font-medium hover:bg-[#1a3666] transition-colors duration-300 mt-8"
+        >
+            Validate Subscription
+        </button>
+    </div>
+</body>
+</html> 

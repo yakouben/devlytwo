@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Role - alganai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="min-h-screen bg-white">
+    <div class="max-w-md mx-auto p-6">
+        <!-- Back Button -->
+        <a href="index.html" class="inline-block mb-12">
+            <i class="fas fa-arrow-left text-[#112952] text-xl"></i>
+        </a>
+
+        <!-- Content -->
+        <div class="space-y-8">
+            <h1 class="text-[#112952] text-3xl font-bold">I am...</h1>
+            
+            <!-- Role Selection Cards -->
+            <div class="space-y-4">
+                <!-- Job Seeker Card -->
+                <a href="#" class="block p-6 bg-[#E4EDFF] rounded-2xl transition-transform hover:scale-[1.02] active:scale-[0.98]">
+                    <div class="flex flex-col items-center text-center space-y-3">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <i class="fas fa-user text-2xl text-[#112952]"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-[#112952] mb-1">Job Seeker</h2>
+                            <p class="text-[#112952]/70">
+                                Find your dream job with AI-powered matching
+                            </p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Employer Card -->
+                <a href="#" class="block p-6 bg-[#E4EDFF] rounded-2xl transition-transform hover:scale-[1.02] active:scale-[0.98]">
+                    <div class="flex flex-col items-center text-center space-y-3">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <i class="fas fa-building text-2xl text-[#112952]"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-[#112952] mb-1">Employer</h2>
+                            <p class="text-[#112952]/70">
+                                Find perfect candidates for your company
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click handlers for role selection
+        const cards = document.querySelectorAll('a[href="#"]');
+        cards[0].addEventListener('click', (e) => {
+            e.preventDefault();
+            // Job Seeker card
+            window.location.href = 'signup-seeker.html';
+        });
+        cards[1].addEventListener('click', (e) => {
+            e.preventDefault();
+            // Employer card
+            window.location.href = 'signup-employer.html';
+        });
+    </script>
+</body>
+</html> 

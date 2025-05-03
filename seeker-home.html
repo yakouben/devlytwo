@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Seeker Dashboard - Alganai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.3/dist/umd/supabase.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img src="src/logo.png" alt="Alganai" class="h-8">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">How it Works</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                    <a href="#" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors">
+                        <i class="fas fa-user mr-2"></i>Profile
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menuBtn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobileMenu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#" class="block px-3 py-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-50">Home</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-50">How it Works</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-50">Pricing</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-50">Contact</a>
+                    <a href="#" class="block px-3 py-2 rounded-md bg-primary text-white hover:bg-secondary">Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 pt-24 pb-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                Enhance Your CV with 
+                <span class="text-primary">AI Magic</span>
+            </h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Upload your CV and watch our AI transform it into a professional masterpiece
+            </p>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8 transform hover:scale-[1.02] transition-transform">
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center cursor-pointer hover:border-primary transition-colors">
+                <div class="mb-4">
+                    <i class="fas fa-cloud-upload-alt text-5xl text-primary"></i>
+                </div>
+                <p class="text-gray-700 text-lg mb-2">Drag and drop your CV here</p>
+                <p class="text-sm text-gray-500">or click to browse</p>
+                <p class="mt-2 text-xs text-gray-400">Supported formats: PDF, DOC, DOCX (Max 10MB)</p>
+            </div>
+        </div>
+
+        <!-- Customization Section -->
+        <div class="mb-8">
+            <textarea 
+                placeholder="Tell us your goals (e.g., 'Optimize for a senior developer position' or 'Emphasize project management skills')"
+                class="w-full p-6 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 placeholder-gray-400"
+                rows="4"
+            ></textarea>
+        </div>
+
+        <!-- Action Button -->
+        <button class="w-full bg-primary text-white py-4 rounded-xl hover:bg-secondary transition-all font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <i class="fas fa-magic mr-2"></i>
+            Enhance CV
+        </button>
+
+        <!-- Features Section -->
+        <div class="grid md:grid-cols-3 gap-8 mt-16">
+            <!-- AI Analysis -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                <div class="mb-4 text-primary">
+                    <i class="fas fa-robot text-4xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl text-gray-900 mb-2">AI-Powered Analysis</h3>
+                <p class="text-gray-600">State-of-the-art AI algorithms analyze your CV to identify improvement opportunities</p>
+            </div>
+
+            <!-- Professional Enhancement -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                <div class="mb-4 text-primary">
+                    <i class="fas fa-star text-4xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl text-gray-900 mb-2">Professional Touch</h3>
+                <p class="text-gray-600">Get industry-specific suggestions to make your CV truly stand out</p>
+            </div>
+
+            <!-- Quick Results -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                <div class="mb-4 text-primary">
+                    <i class="fas fa-bolt text-4xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl text-gray-900 mb-2">Instant Results</h3>
+                <p class="text-gray-600">Receive your enhanced CV within minutes, not hours</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-16 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="text-sm text-gray-500">
+                    © 2024 Alganai. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-sm text-gray-500 hover:text-primary transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-primary transition-colors">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-primary transition-colors">Help</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.innerHTML = mobileMenu.classList.contains('hidden') 
+                ? '<i class="fas fa-bars text-2xl"></i>' 
+                : '<i class="fas fa-times text-2xl"></i>';
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alganai - AI-Powered Career & Hiring Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#A8C8FF',
+                        navy: '#001F3F',
+                        dark: '#111827'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-dark">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="/" class="flex items-center">
+                    <img src="src/logo.png" alt="Alganai" class="h-8">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#how-it-works" class="text-navy hover:text-navy/70 transition-colors">How it Works</a>
+                    <a href="#features" class="text-navy hover:text-navy/70 transition-colors">Features</a>
+                    <a href="#testimonials" class="text-navy hover:text-navy/70 transition-colors">Testimonials</a>
+                    <div class="flex items-center gap-4">
+                        <a href="login.html" class="text-navy hover:text-navy/70 transition-colors">Sign In</a>
+                        <a href="role.html" class="bg-navy text-white px-6 py-2 rounded-xl hover:shadow-lg hover:shadow-primary/20 transition-all">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-navy p-2 hover:bg-gray-100 rounded-lg" id="menuBtn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden" id="mobileMenu">
+                <div class="py-4 space-y-4">
+                    <a href="#how-it-works" class="block py-2 text-navy hover:text-navy/70 transition-colors">
+                        How it Works
+                    </a>
+                    <a href="#features" class="block py-2 text-navy hover:text-navy/70 transition-colors">
+                        Features
+                    </a>
+                    <a href="#testimonials" class="block py-2 text-navy hover:text-navy/70 transition-colors">
+                        Testimonials
+                    </a>
+                    <div class="pt-4 space-y-3">
+                        <a href="login.html" class="block w-full text-center py-2 text-navy hover:bg-gray-50 rounded-xl transition-colors">
+                            Sign In
+                        </a>
+                        <a href="role.html" class="block w-full text-center bg-navy text-white py-2 rounded-xl hover:shadow-lg hover:shadow-primary/20 transition-all">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-br from-white to-primary/10 relative overflow-hidden pt-20">
+        <div class="max-w-7xl mx-auto px-6 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="space-y-8 animate-fade-in">
+                    <h1 class="text-5xl font-bold text-navy leading-tight">
+                        AI-Powered Career & Hiring Assistant
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Upload resumes or job offers and let Alganai do the matching. Find your perfect job or ideal candidate with AI precision.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="role.html" 
+                           class="group bg-navy text-white px-8 py-4 rounded-xl font-medium relative overflow-hidden">
+                            <span class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent transform -skew-x-12 translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
+                            <span class="relative">Get Started</span>
+                        </a>
+                        <button class="bg-white text-navy px-8 py-4 rounded-xl font-medium border-2 border-navy hover:bg-navy hover:text-white transition-all">
+                            Upload Resume
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Animation -->
+                <div class="relative animate-float">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-3xl transform rotate-6"></div>
+                    <lottie-player
+                        src="https://assets2.lottiefiles.com/packages/lf20_xyadoh9h.json"
+                        background="transparent"
+                        speed="1"
+                        style="width: 100%; height: 500px;"
+                        loop
+                        autoplay
+                    ></lottie-player>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Elements -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+    </section>
+
+    <!-- How Alganai Works -->
+    <section id="how-it-works" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-navy mb-4">How Alganai Works</h2>
+            <p class="text-gray-600 text-center text-lg mb-16 max-w-2xl mx-auto">
+                Our AI-powered platform makes job matching seamless for both candidates and employers
+            </p>
+
+            <!-- Toggle Buttons -->
+            <div class="flex justify-center mb-16">
+                <div class="bg-gray-100 p-1 rounded-xl inline-flex">
+                    <button class="px-6 py-2 rounded-lg text-navy font-medium bg-white shadow-sm transition-all" id="seekerBtn">
+                        For Job Seekers
+                    </button>
+                    <button class="px-6 py-2 rounded-lg text-gray-600 transition-all" id="employerBtn">
+                        For Employers
+                    </button>
+                </div>
+            </div>
+
+            <!-- Steps Container -->
+            <div class="relative">
+                <!-- Job Seeker Steps -->
+                <div id="seekerSteps" class="grid md:grid-cols-3 gap-8 transition-all duration-300">
+                    <!-- Step 1 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group">
+                        <div class="relative mb-8">
+                            <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center text-navy mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-file-upload text-2xl"></i>
+                            </div>
+                            <span class="absolute -top-4 -right-4 w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-bold">1</span>
+                        </div>
+                        <h4 class="font-semibold text-xl mb-3 text-navy">Upload Resume</h4>
+                        <p class="text-gray-600">Share your CV and let our AI analyze your experience and skills.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group">
+                        <div class="relative mb-8">
+                            <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center text-navy mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-magic text-2xl"></i>
+                            </div>
+                            <span class="absolute -top-4 -right-4 w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-bold">2</span>
+                        </div>
+                        <h4 class="font-semibold text-xl mb-3 text-navy">AI Enhancement</h4>
+                        <p class="text-gray-600">Get personalized suggestions to improve your resume and match rate.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group">
+                        <div class="relative mb-8">
+                            <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center text-navy mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-check-circle text-2xl"></i>
+                            </div>
+                            <span class="absolute -top-4 -right-4 w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-bold">3</span>
+                        </div>
+                        <h4 class="font-semibold text-xl mb-3 text-navy">Get Matched</h4>
+                        <p class="text-gray-600">Apply to perfectly matching jobs with one click and track progress.</p>
+                    </div>
+                </div>
+
+                <!-- Employer Steps -->
+                <div id="employerSteps" class="grid md:grid-cols-3 gap-8 transition-all duration-300 hidden opacity-0">
+                    <!-- Step 1 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group">
+                        <div class="relative mb-8">
+                            <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center text-navy mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-briefcase text-2xl"></i>
+                            </div>
+                            <span class="absolute -top-4 -right-4 w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-bold">1</span>
+                        </div>
+                        <h4 class="font-semibold text-xl mb-3 text-navy">Post Job</h4>
+                        <p class="text-gray-600">Create a job listing or upload your job description.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group">
+                        <div class="relative mb-8">
+                            <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center text-navy mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-robot text-2xl"></i>
+                            </div>
+                            <span class="absolute -top-4 -right-4 w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-bold">2</span>
+                        </div>
+                        <h4 class="font-semibold text-xl mb-3 text-navy">AI Filters</h4>
+                        <p class="text-gray-600">Our AI automatically screens and ranks the best candidates.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group">
+                        <div class="relative mb-8">
+                            <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center text-navy mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-handshake text-2xl"></i>
+                            </div>
+                            <span class="absolute -top-4 -right-4 w-8 h-8 bg-navy text-white rounded-full flex items-center justify-center font-bold">3</span>
+                        </div>
+                        <h4 class="font-semibold text-xl mb-3 text-navy">View Matches</h4>
+                        <p class="text-gray-600">Review top candidates and schedule interviews directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Matching Demo -->
+    <section class="py-24 bg-gradient-to-br from-primary/5 to-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-navy mb-16">Smart Matching in Action</h2>
+            
+            <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-4xl mx-auto relative overflow-hidden">
+                <!-- Mock UI -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Upload Side -->
+                    <div class="border-2 border-dashed border-gray-200 rounded-xl p-6 text-center hover:border-navy transition-colors cursor-pointer group">
+                        <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-cloud-upload-alt text-3xl text-navy"></i>
+                        </div>
+                        <h4 class="font-medium text-lg mb-2">Upload Your Resume</h4>
+                        <p class="text-sm text-gray-500">Drag & drop your CV or click to browse</p>
+                    </div>
+
+                    <!-- Results Side -->
+                    <div class="space-y-4">
+                        <div class="animate-pulse">
+                            <div class="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                            <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+                        </div>
+                        
+                        <!-- Match Result -->
+                        <div class="bg-primary/10 rounded-xl p-4 mt-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-navy">Match Score</span>
+                                <span class="text-green-600 font-bold">94%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 94%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Alganai -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-navy mb-16">Why Choose Alganai</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bolt text-3xl text-navy"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">AI-Powered Matching</h3>
+                    <p class="text-gray-600">Smart algorithms ensure perfect matches between candidates and jobs.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-clock text-3xl text-navy"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">Save Time</h3>
+                    <p class="text-gray-600">Automated screening and matching saves hours of manual work.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-3xl text-navy"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-navy">Better Results</h3>
+                    <p class="text-gray-600">Higher success rates with AI-optimized matching and suggestions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-gradient-to-br from-primary/5 to-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-navy mb-16">What Our Users Say</h2>
+            
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user text-navy"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-navy">Sarah Johnson</h4>
+                                    <p class="text-sm text-gray-500">Software Engineer</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">"Alganai helped me find my dream job in just two weeks. The AI suggestions really improved my resume!"</p>
+                        </div>
+                    </div>
+                    <!-- Add more testimonials -->
+                </div>
+                <div class="swiper-pagination mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 bg-navy text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl font-bold mb-8">Ready to Get Started with Alganai?</h2>
+            <p class="text-xl text-white/70 mb-12">Join thousands of successful matches made through AI</p>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="role.html" class="group bg-white text-navy px-8 py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/20 transition-all transform hover:-translate-y-1">
+                    Try as Employer
+                </a>
+                <a href="role.html" class="group bg-transparent text-white px-8 py-4 rounded-xl font-medium border-2 border-white hover:bg-white hover:text-navy transition-all transform hover:-translate-y-1">
+                    Upload Resume
+                </a>
+            </div>
+        </div>
+        
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary to-transparent"></div>
+            <!-- Add pattern or wave SVG here -->
+        </div>
+    </section>
+
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out forwards;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+
+    <script>
+        // Initialize Swiper
+        new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                }
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Toggle functionality
+        const seekerBtn = document.getElementById('seekerBtn');
+        const employerBtn = document.getElementById('employerBtn');
+        const seekerSteps = document.getElementById('seekerSteps');
+        const employerSteps = document.getElementById('employerSteps');
+
+        function showSeeker() {
+            // Update buttons
+            seekerBtn.classList.add('bg-white', 'shadow-sm', 'text-navy');
+            seekerBtn.classList.remove('text-gray-600');
+            employerBtn.classList.remove('bg-white', 'shadow-sm', 'text-navy');
+            employerBtn.classList.add('text-gray-600');
+
+            // Update content
+            seekerSteps.classList.remove('hidden', 'opacity-0');
+            employerSteps.classList.add('hidden', 'opacity-0');
+        }
+
+        function showEmployer() {
+            // Update buttons
+            employerBtn.classList.add('bg-white', 'shadow-sm', 'text-navy');
+            employerBtn.classList.remove('text-gray-600');
+            seekerBtn.classList.remove('bg-white', 'shadow-sm', 'text-navy');
+            seekerBtn.classList.add('text-gray-600');
+
+            // Update content
+            employerSteps.classList.remove('hidden', 'opacity-0');
+            seekerSteps.classList.add('hidden', 'opacity-0');
+        }
+
+        // Add click event listeners
+        seekerBtn.addEventListener('click', showSeeker);
+        employerBtn.addEventListener('click', showEmployer);
+
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Toggle menu icon
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Close mobile menu when resizing to desktop view
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) { // md breakpoint
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+    </script>
+</body>
+</html> 
